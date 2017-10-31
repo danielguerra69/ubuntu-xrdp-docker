@@ -4,7 +4,9 @@ MAINTAINER Daniel Guerra
 # Add packages
 
 RUN apt-get update
-RUN apt-get -yy install docker.io docker-compose
+RUN apt-get -yy install docker.io python-pip
+RUN pip install --upgrade pip 
+RUN pip install docker-compose
 
 # Configure
 

@@ -1,0 +1,39 @@
+# Compose xrdp server
+version: '3.0'
+
+services:
+
+#######################################
+# Docker in Docker Server
+#######################################
+
+  shared-docker:
+    image: docker:stable-dind
+    command: --storage-driver=overlay2
+    hostname: shared-docker
+    privileged: True
+    volumes:
+      - shared-docker-data:/var/lib/docker
+  
+######################################
+#  XRDP / SSH Server
+######################################
+
+  xrdp:
+    hostname: xrdp
+    image: danielguerra/ubuntu-xrdp-docker
+    shm_size: 1g
+    links:
+      - shared-docker:docker
+    volumes:
+      - xrdp-home:/home
+    ports:
+      - '3389:3389'
+      - '2222:22'
+
+######################################
+# Volumes
+######################################
+volumes:
+  shared-docker-data:
+  xrdp-home:

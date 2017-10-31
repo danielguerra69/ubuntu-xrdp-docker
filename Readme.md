@@ -16,7 +16,7 @@ docker run --privileged --name shared-docker -d docker:stable-dind --storage-dri
 Start the remote desktop server
 
 ```bash
-docker run -d ---link shared-docker:docker --shm-size 1g -name uxrdp-dind --hostname docker-terminal -p 3389:3389 -p 2222:22 danielguerra/ubuntu-xrdp-docker
+docker run -d --link shared-docker:docker --shm-size 1g --name uxrdp-dind --hostname docker-terminal -p 3389:3389 -p 2222:22 danielguerra/ubuntu-xrdp-docker
 ```
 
 Connect to the <docker-ip> remote desktop server with your RDP-client or 
