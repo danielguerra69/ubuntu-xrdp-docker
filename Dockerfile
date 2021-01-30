@@ -1,11 +1,11 @@
-FROM danielguerra/ubuntu-xrdp
+FROM danielguerra/ubuntu-xrdp:20.04
 MAINTAINER Daniel Guerra
 
 # Add packages
 
 RUN apt-get update
 RUN apt-get -yy install docker.io python-pip
-RUN pip install --upgrade pip 
+RUN pip install --upgrade pip
 RUN pip install docker-compose
 
 # Configure
