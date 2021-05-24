@@ -1,4 +1,4 @@
-## Ubuntu 16.04 Xenial Remote Desktop Server Docker in Docker
+## Ubuntu 20.04 Bionic Remote Desktop Server Docker in Docker
 
 Multi User Remote Desktop Server with docker inside.
 Intended for group usage in a shared docker space.
