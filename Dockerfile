@@ -8,7 +8,6 @@ RUN apt-get -yy install docker.io docker-compose git
 
 # Configure
 
-RUN usermod -G docker ubuntu
 RUN echo "export DOCKER_HOST='tcp://docker:2375'" >> /etc/profile
 
 # Clean
